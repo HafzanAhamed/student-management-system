@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 # Student Management System
+
+This is my internship selection task.
 
 A production-style Student Management System built with Next.js App Router, TypeScript, Tailwind CSS, React Hook Form, Zod, and MongoDB.
 
@@ -112,7 +113,3 @@ Soft delete a student:
 ```bash
 curl -X DELETE http://localhost:3000/api/students/REPLACE_ID
 ```
-=======
-# student-management-system
-This is my internship selection task
->>>>>>> 7a0178e8a72d0bdebe665e4bbecdd9584b64ab54
