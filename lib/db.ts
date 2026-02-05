@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI: string = process.env.MONGODB_URI ?? "";
 
 if (!MONGODB_URI) {
-  throw new Error("MONGODB_URI is not defined. Please set it in .env.local.");
+  throw new Error("MONGODB_URI is not defined. Set it in Vercel Environment Variables.");
 }
 
 type MongooseCache = {
