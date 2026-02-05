@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import mongoose from "mongoose";
+import mongoose, { type SortOrder } from "mongoose";
 import { connectToDatabase } from "@/lib/db";
 import Student from "@/models/Student";
 import { getNextStudentCode } from "@/lib/studentCode";
@@ -131,7 +131,9 @@ export async function GET(request: NextRequest) {
     ];
   }
 
-  const sort = sortParam === "createdAt_asc" ? { createdAt: 1 } : { createdAt: -1 };
+  const sort: Record<string, SortOrder> = {
+    createdAt: sortParam === "createdAt_asc" ? 1 : -1
+  };
 
   const total = await Student.countDocuments(filter);
   const items = await Student.find(filter)
