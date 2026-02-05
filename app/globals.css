@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-canvas: 244 247 251;
+  --color-surface: 255 255 255;
+  --color-surface-2: 235 241 247;
+  --color-border: 217 226 235;
+  --color-ink: 24 36 52;
+  --color-ink-soft: 46 60 78;
+  --color-muted: 102 116 134;
+  --color-brand: 18 165 165;
+  --color-brand-strong: 12 141 141;
+  --color-sky: 59 126 208;
+  --color-coral: 242 122 96;
+  --color-coral-strong: 231 94 74;
+  --color-success: 36 170 143;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+}
+
+* {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  @apply cursor-not-allowed;
+}
